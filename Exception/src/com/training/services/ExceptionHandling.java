@@ -30,7 +30,7 @@ public class ExceptionHandling {
 			System.out.println(age);
 		}
 			
-			public void usingFinallyBlock()
+			public String usingFinallyBlock()
 			{
 				int denominator=0;
 				try
@@ -40,12 +40,14 @@ public class ExceptionHandling {
 				catch(ArithmeticException e)
 				{
 					System.out.println("denominator should not be zero");
+					return "welcome";
 				}
 				finally
 				{
 				System.out.println("Inside finally");
 				
 				}
+				return "bye,bye";
 		}
 	}
 

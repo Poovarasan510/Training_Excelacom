@@ -1,5 +1,6 @@
 package com.training.services;
 
+import java.util.*;
 public class Application {
 
 	public static void main(String[] args) {
@@ -30,6 +31,20 @@ public class Application {
 		exHandling.usingArrayIndexException(args);
 		exHandling.usingNumberFormatException("fourty five");
 		exHandling.usingFinallyBlock();
+		
+		
+		//since we are using try with resource - scanner with
+		
+		try(Scanner sc=new Scanner(System.in))
+		{
+			System.out.println("enter number");
+			int num=sc.nextInt();
+			System.out.println(num);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 }
