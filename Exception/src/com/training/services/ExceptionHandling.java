@@ -29,5 +29,23 @@ public class ExceptionHandling {
 			}
 			System.out.println(age);
 		}
+			
+			public void usingFinallyBlock()
+			{
+				int denominator=0;
+				try
+				{
+					System.out.println(4/denominator);
+				}
+				catch(ArithmeticException e)
+				{
+					System.out.println("denominator should not be zero");
+				}
+				finally
+				{
+				System.out.println("Inside finally");
+				
+				}
+		}
 	}
 

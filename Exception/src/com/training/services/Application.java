@@ -29,6 +29,7 @@ public class Application {
 		ExceptionHandling exHandling=new ExceptionHandling();
 		exHandling.usingArrayIndexException(args);
 		exHandling.usingNumberFormatException("fourty five");
+		exHandling.usingFinallyBlock();
 	}
 
 }

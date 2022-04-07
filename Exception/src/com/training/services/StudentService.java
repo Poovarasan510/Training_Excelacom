@@ -20,7 +20,7 @@ public String sendDetails() {
 	
 	String name=null;
 	
-	try
+	try                     
 	{
 		name=this.student.getFirstName();
 	}
