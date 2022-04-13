@@ -20,7 +20,7 @@ public class TreeSetApplication {
 
 	for(Student eachStudent:set)
 	{
-		System.out.println(eachStudent.getFirstName());
+		System.out.println(eachStudent.getFirstName()); 
 	}
 
 	}
