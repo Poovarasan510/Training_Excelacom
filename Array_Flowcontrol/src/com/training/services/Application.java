@@ -39,7 +39,7 @@ public class Application {
 		BankAccount[] accountList = {
 				new BankAccount(800,"jay",5000,"savings"),
 				new BankAccount(800,"kam",5000,"fixed"),
-				new BankAccount(800,"tom",7000,"recurring"),
+				new BankAccount(800,"tom",7000,"recurring")
 		};
 		
 		double[] interestvalues=service.findInterestByAccountType(accountList);

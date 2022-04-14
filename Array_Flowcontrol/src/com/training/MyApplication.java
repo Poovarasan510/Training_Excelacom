@@ -40,6 +40,9 @@ for(double eachValue : values)
 	System.out.println(eachValue);
 }
 sc.close();
+
 	}
+	
+
 
 }

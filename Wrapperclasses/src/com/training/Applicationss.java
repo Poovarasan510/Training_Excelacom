@@ -27,8 +27,9 @@ int intsal=(int)salary;
 
 int age=42;
 String strage=Integer.toString(age);
+
 int intage=Integer.valueOf(strage);//converting to primitive type
-	
+
 	}
 
 }

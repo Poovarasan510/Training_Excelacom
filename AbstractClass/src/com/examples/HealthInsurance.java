@@ -11,7 +11,7 @@ super();
 }
 
 public HealthInsurance(int policyNumber, String policyHolderName, double premium, String[] preExistingDiseases) {
-//super(policyNumber, policyHolderName, premium);
+super(policyNumber, policyHolderName, premium);
 this.preExistingDiseases = preExistingDiseases;
 }
 
