@@ -10,5 +10,9 @@ public interface Conditional<T> {
 		return value<=80.00;
 	}
 	
+	public static String getMessage()
+	{
+		return "static method in interface=yes its real";
+	}
 	
 }
