@@ -27,7 +27,7 @@ public class Application {
 		   break;
 		   
 	   case 4:
-		   service.lengthOfString("     flower king");
+		   service.lengthOfString("flower");
 		   break;
 		   
 	   case 5:

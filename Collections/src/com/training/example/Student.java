@@ -73,7 +73,7 @@ public class Student implements Comparable<Student>{
 	
 	public int compareTo(Student otherobj)
 	{
-		return otherobj.firstName.compareTo(this.firstName);
+		return this.firstName.compareTo(otherobj.firstName);
 	}
 	
 }

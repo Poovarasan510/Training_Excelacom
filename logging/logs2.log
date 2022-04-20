@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2022-04-19T00:15:04</date>
+  <millis>1650352504298</millis>
+  <sequence>0</sequence>
+  <logger>com.logging.Book</logger>
+  <level>INFO</level>
+  <class>com.logging.LoggingWithPropandSavetoFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>logging properties done right</message>
+</record>
+<record>
+  <date>2022-04-19T00:15:04</date>
+  <millis>1650352504314</millis>
+  <sequence>1</sequence>
+  <logger>com.logging.Book</logger>
+  <level>INFO</level>
+  <class>com.logging.Book</class>
+  <method>&lt;init&gt;</method>
+  <thread>1</thread>
+  <message>book with zero arguement constructed</message>
+</record>
+<record>
+  <date>2022-04-19T00:15:04</date>
+  <millis>1650352504315</millis>
+  <sequence>2</sequence>
+  <logger>com.logging.Book</logger>
+  <level>INFO</level>
+  <class>com.logging.LoggingWithPropandSavetoFile</class>
+  <method>main</method>
+  <thread>1</thread>
+  <message>Book [bookNumber=0, bookName=null, author=null, price=0.0]</message>
+</record>
+</log>
