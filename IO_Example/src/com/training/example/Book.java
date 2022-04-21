@@ -1,6 +1,13 @@
 package com.training.example;
 
-public class Book implements Comparable<Book> {
+import java.io.Serializable;
+
+public class Book implements Comparable<Book>,Serializable {
+	
+	private int bookNumber;
+	private String bookName;
+	private String author;
+	private double price;
 	
 	public Book(int bookNumber, String bookName, String author, double price) {
 		super();
@@ -11,12 +18,9 @@ public class Book implements Comparable<Book> {
 	}
 	public Book() {
 		super();
-		// TODO Auto-generated constructor stub
+	
 	}
-	private int bookNumber;
-	private String bookName;
-	private String author;
-	private double price;
+	
 	public int getBookNumber() {
 		return bookNumber;
 	}
@@ -81,7 +85,7 @@ public class Book implements Comparable<Book> {
 	}
 	@Override
 	public String toString() {
-		return bookNumber + "," + bookName + "," +author + " " + price;
+		return bookNumber + "," + bookName + "," +author + "," + price;
 				
 	}
 	@Override
