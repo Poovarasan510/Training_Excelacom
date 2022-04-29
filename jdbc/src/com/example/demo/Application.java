@@ -31,10 +31,14 @@ public class Application {
 //			{
 //			System.out.println("value not found");	
 //			}
-			System.out.println("____________________________________________");
-		int rowsupdated=service.updatePriceById(101,899);
-		System.out.println("Rows updated"+rowsupdated);
-		service.findAll().forEach(System.out::println);
+//			System.out.println("____________________________________________");
+//		int rowsupdated=service.updatePriceById(101,899);
+//		System.out.println("Rows updated"+rowsupdated);
+//		service.findAll().forEach(System.out::println);
+			
+			ProductService kathli=new ProductService(378,"laddu",450);
+			ProductService jamun=new ProductService(891,"jilebi",989);
+			service.usingTxn(kathli,jamun);
 		
 //			System.out.println(con);
 		}

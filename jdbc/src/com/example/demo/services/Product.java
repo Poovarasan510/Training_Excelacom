@@ -42,6 +42,48 @@ public class Product {
 		return productList;
 	}
 	
+	public void usingTxn(ProductService prd1,ProductService prd2)
+	{
+		String sql="insert into poov_product values(?,?,?)";
+		try(PreparedStatement pstmt=con.prepareStatement(sql))
+		{
+			con.setAutoCommit(false);
+			
+			pstmt.setInt(1, prd1.getProductId());
+			pstmt.setString(2, prd1.getProductName());
+			pstmt.setDouble(3, prd1.getPrice());
+			
+		int rowsAdded=pstmt.executeUpdate();
+		
+		pstmt.setInt(1, prd2.getProductId());
+		pstmt.setString(2, prd2.getProductName());
+		pstmt.setDouble(3,prd2.getPrice());
+		
+		int rowsAdded1=pstmt.executeUpdate();
+		
+		if(prd2.getPrice()>prd1.getPrice())
+		{
+			con.commit();
+		}
+		else
+		{
+		con.rollback();
+			
+		}
+		System.out.println("Rows updated"+rowsAdded);
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	
+	private double getPrice() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	public int deleteById(int id)
 	{   int rowsDeleted=0;
 		String sql="delete from poov_product where  product_id=?";
