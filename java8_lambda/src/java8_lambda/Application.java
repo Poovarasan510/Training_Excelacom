@@ -17,7 +17,7 @@ public class Application {
 		
 		print(lambda);
 		
-		Converter<String,Integer> strLength=(str)->str.length();
+		Converter<String,Integer> strLength=str->str.length();
 		System.out.println(strLength.convert("chennai"));
 		
 		
