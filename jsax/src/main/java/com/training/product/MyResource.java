@@ -1,4 +1,4 @@
-package com.training.example.jsax;
+package com.training.product;
 
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
