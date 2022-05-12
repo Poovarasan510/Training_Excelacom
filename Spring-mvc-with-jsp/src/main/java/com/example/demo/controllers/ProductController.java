@@ -63,7 +63,7 @@ public class ProductController {
 		model.addAttribute("found",entity);
 		
 		
-		return "showproduct";
+		return "viewproduct";
 	}
 	
 	@RequestMapping(value="/product/remove", method=RequestMethod.GET)
@@ -103,8 +103,8 @@ public class ProductController {
 	@RequestMapping(value="/product/update",method=RequestMethod.POST)
 		public String showProduct(@ModelAttribute("id")Product id,Model model) {
 			int entity=repo.update(id);
-			model.addAttribute("found", entity+" row is updatedsss");
-			return "showproduct";		
+			model.addAttribute("found", entity+" row is updated");
+			return "viewproduct";		
 		}
 }
 
