@@ -1,20 +1,15 @@
-package com.example.demo.utils;
+package com.example.demo.utils.bidirectional;
 
 import java.util.List;
-
-import javax.transaction.Transactional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import com.example.demo.entiry.Doctor;
-import com.example.demo.entiry.Patient;
-import com.example.demo.ifaces.DoctorRepository;
+import com.example.demo.ifaces.bidirectional.DoctorRepository;
+import com.example.demo.ifaces.bidirectional.PatientRepository;
+import com.example.demo.training.entiry.bidirectional.Doctor;
+import com.example.demo.training.entiry.bidirectional.Patient;
 
 @Component
-public class DoctorUtils {
-
-	
+public class Utility {
 	
 	@Autowired
 	List<Patient> patientList;
@@ -25,10 +20,17 @@ public class DoctorUtils {
 	@Autowired
 	DoctorRepository repo;
 	
+	@Autowired
+	PatientRepository patientrepo;
+	
+	
 	public void create()
 	{
-		doc.setPatientList(patientList);
-		
+		for(Patient eachPatient: patientList)
+		{
+		eachPatient.setDoctor(doc);
+		patientrepo.save(eachPatient);
+		}
 		Doctor added=repo.save(doc);
 		
 		if(added!=null)
@@ -37,7 +39,6 @@ public class DoctorUtils {
 		}
 	}
 	
-@Transactional
 	public void findAll()
 	{
 		
@@ -57,5 +58,11 @@ public class DoctorUtils {
 		}
 	}
 	}
-	
-}
+	public void findDoctorFrmPatient() 
+	{
+		Patient entity=patientrepo.findById(301).get();
+		System.out.println(entity.getPatientName());
+		System.out.println(entity.getDoctor());
+	}
+	}
+

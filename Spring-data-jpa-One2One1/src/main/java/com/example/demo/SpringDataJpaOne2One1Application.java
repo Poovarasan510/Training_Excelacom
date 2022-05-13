@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-
 import com.example.demo.seminar.Seminar;
 import com.example.demo.speaker.Speaker;
 import com.example.demo.utils.SeminarUtils;
@@ -27,11 +26,13 @@ public class SpringDataJpaOne2One1Application {
 	@Bean
 	public Speaker raj()
 	{
+		
 		Speaker doc = new Speaker();
 	    doc.setId(101);
 	    doc.setFirstName("rajesh");
 	    doc.setQualification("engineer");
 		return doc;
+		
 	}
 	@Bean
 	public Seminar tamil()

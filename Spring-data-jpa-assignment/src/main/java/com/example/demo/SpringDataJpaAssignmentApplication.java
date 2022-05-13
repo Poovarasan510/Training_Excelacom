@@ -30,7 +30,7 @@ public class SpringDataJpaAssignmentApplication {
 //	location.forEach(System.out::println);
 //
 //	
-//		List<Employee> skillSet = services.findByskillSet("java");
+//		List<Employee> skillSet = services.findBySkillSet("java");
 //		skillSet.forEach(System.out::println);
 		
 		List<Employee>locationAndSkillset = services.getByLocationAndSkillset("chennai", "python");

@@ -41,7 +41,7 @@ public class EmployeeService {
 		}
 			
 		public List<Employee> findByskillSet(String skillSet) {
-			return  this.repo.findByskillSet(skillSet);
+			return  this.repo.findBySkillSet(skillSet);
 		}
 		
 		public List<Employee> getByLocationAndSkillset(String location, String skillSet) {

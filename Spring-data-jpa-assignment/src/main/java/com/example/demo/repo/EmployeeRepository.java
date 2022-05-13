@@ -16,7 +16,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	
 	public List<Employee> findByLocation(String location);
 	
-	public List<Employee> findByskillSet(String location);
+	public List<Employee> findBySkillSet(String location);
 	
 		
 		@Query(nativeQuery = true,
