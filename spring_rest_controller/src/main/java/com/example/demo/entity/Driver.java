@@ -10,7 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="flower_driver")
+@Table(name="flower_driver01")
 
 @Data
 @AllArgsConstructor
@@ -24,8 +24,8 @@ public class Driver {
 	@Column(name="driver_name")
 	private String driverName;
 	
-	@Column(name="mobile_name")
-	private long mobileName;
+	@Column(name="mobile_number")
+	private long mobileNumber;
 	
 	@Column(name="rating")
 	private double rating;

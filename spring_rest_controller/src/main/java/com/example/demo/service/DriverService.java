@@ -28,19 +28,44 @@ public class DriverService {
 	{
 		return this.repo.findById(id).orElseThrow(()->new RuntimeException(id+"not found"));
 	}
-	
-	public Driver removeDriver(int id)
-	{
-		try
-		{
-			this.repo.deleteById(id);
-		}
-		catch(Exception e)
-		{
-e.printStackTrace();
-		}
-		return null;
-	
-	}
+	public String delete(int id) {
+		String message;
+		try {
+		 this.repo.deleteById(id);
+		 message="One element deleted";
+		 return message;
+		 
+		 
+		} catch (Exception e) {
+			
+			e.printStackTrace();
 
+			message="Not found";
+			
+			
+		}
+		return message;
+	
+
+	}
+	
+	public List<Driver> findByDriverName(String srchName)
+	{
+		return this.repo.findByDriverName(srchName);
+	}
+	
+	public List<Driver> srchByMobileNumber(long number)
+	{
+		return this.repo.findByMobileNumber(number);
+	}
+	
+	public List<Driver> srchByDriverRating(double rating)
+	{
+		return this.repo.searchByRating(rating);
+	}
+	
+	public int updateRating(int id,double updatedRating)
+	{
+		return this.repo.modifyRating(id, updatedRating);
+	}
 }

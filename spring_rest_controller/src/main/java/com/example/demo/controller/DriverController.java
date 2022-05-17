@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,6 +38,32 @@ public class DriverController {
 	public Driver getDriverById(@PathVariable("id") int id){
 		return this.service.findById(id);
 	}
+	
+	@GetMapping(path="/drivers/searchbyname/{driverName}")
+	public List<Driver> getDriverByName(@PathVariable("driverName") String driverName)
+	{
+		return this.service.findByDriverName(driverName);	}
+	
+	@GetMapping(path="/drivers/searchbynumber/{mobilenumber}")
+	public List<Driver> getDriverByMobileNumber(@PathVariable("mobileNumber") long number)
+	{
+		return this.service.srchByMobileNumber(number);
+	}
+	
+	@GetMapping(path="/driver/srch/{rating}")
+	public List<Driver> getDriverByRating(@PathVariable("rating") double rating)
+	{
+		return this.service.srchByDriverRating(rating);
+	}
+	
+	 
+    @PutMapping(path ="/drivers/updated/{id}/{rating}")
+    public ResponseEntity<String> updateRating(@PathVariable("id")int id,@PathVariable("rating")double updatedRating){
+   	 int rowsUpdated=this.service.updateRating(id ,updatedRating);
+   	 return ResponseEntity.status(HttpStatus.OK).body(rowsUpdated+"updated");
+   	 
+    }
+    
 @PostMapping(path="/drivers")
 public ResponseEntity<Driver> addDriver(@RequestBody Driver entity) {
 	Driver driver= this.service.add(entity);
@@ -50,14 +77,9 @@ public ResponseEntity<Driver> addDriver(@RequestBody Driver entity) {
 	
 	//return ResponseEntity.status(HttpStatus.CREATED).body(driver);
 }
-
 @DeleteMapping(path="/drivers/remove/{id}")
-public ResponseEntity<String> removeDriver(@PathVariable("id") int id)
+public String removeDriver(@PathVariable("id") int id)
 {
-	
-	 Driver driver1=this.service.removeDriver(id);
-	 
-	 return ResponseEntity.ok().body("one element deleted");
-
+	 return this.service.delete(id);
 }
 }
