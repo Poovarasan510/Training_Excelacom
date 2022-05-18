@@ -64,6 +64,12 @@ public class DriverController {
    	 
     }
     
+    @GetMapping(path="/drivers/sort/{propName}")
+    public List<Driver> getDriverNameBySort(@PathVariable("propName")String propName)
+    {
+    	return this.service.sortedList(propName);
+    }
+    
 @PostMapping(path="/drivers")
 public ResponseEntity<Driver> addDriver(@RequestBody Driver entity) {
 	Driver driver= this.service.add(entity);

@@ -3,6 +3,7 @@ package com.example.demo.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.Driver;
@@ -67,5 +68,10 @@ public class DriverService {
 	public int updateRating(int id,double updatedRating)
 	{
 		return this.repo.modifyRating(id, updatedRating);
+	}
+	
+	public List<Driver> sortedList(String propName)
+	{
+		return this.repo.findAll(Sort.by(propName));
 	}
 }
