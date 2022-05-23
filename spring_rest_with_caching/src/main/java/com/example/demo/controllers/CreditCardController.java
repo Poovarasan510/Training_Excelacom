@@ -33,7 +33,7 @@ public class CreditCardController {
 		return this.service.getAll();
 	}
 	
-	@GetMapping(path="/creditcards/{id}")
+	@GetMapping(path="/creditcards/find/{id}")
 	public CreditCard findById(@PathVariable("id") long id)
 	{
 		return this.service.getById(id);
