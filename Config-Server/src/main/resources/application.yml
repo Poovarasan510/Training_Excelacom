@@ -6,7 +6,7 @@ spring:
   config:
    server:
     git:
-     uri: https://github.com/rkj3001/cloud-config.git
+     uri: https://github.com/Poovarasan510/Cloud_Configure.git
      search-paths:
          - '{application}'
        
