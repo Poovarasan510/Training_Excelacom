@@ -31,7 +31,7 @@ public class Applications {
 		Long total=objs.stream().filter(e->e.getCountryName().contains(searchName))
 		    .mapToLong(d -> d.getPopulation()).sum();
 		
-	System.out.println(searchName+"total population"+total);
+	System.out.println(searchName+"total population:"+total);
 	}
 
 
@@ -46,17 +46,30 @@ public class Applications {
 		
 		List<StreamsExample> countryLists=Arrays.asList(usa,india,usa1,nepal,india1,america);	
 	
-		System.out.println("To find place from country:");
-		findPlaceByCountry(countryLists,"USA");
-		
-		System.out.println("To find country and its city count:");
-		countMethod(countryLists,"USA");
-		countMethod(countryLists,"India");
-		countMethod(countryLists,"Nepal");
-		
-		System.out.println("To find country total population");
-		countryWithTotalPopulation(countryLists,"India");
-		
+	System.out.println("To find the country by lists(Usa):");
+	
+	findPlaceByCountry(countryLists,"USA");
+	
+	System.out.println("To find the country by lists(India):");
+	findPlaceByCountry(countryLists,"India");
+	
+	System.out.println("To find the country by lists(Nepal):");
+	findPlaceByCountry(countryLists,"Nepal");
+	
+	System.out.println("Total Number of time India had occured:");
+	
+	countMethod(countryLists,"India");
+	
+	System.out.println("Total number of times Nepal had occured");
+	countMethod(countryLists,"Nepal");
+	
+	System.out.println("Total number of times USA had occured");
+	countMethod(countryLists,"USA");
+	
+	System.out.println("to find total population of country:");
+	
+	countryWithTotalPopulation(countryLists,"USA");
+	
 		
 		
 		

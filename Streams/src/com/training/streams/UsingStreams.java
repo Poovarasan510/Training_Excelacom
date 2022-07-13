@@ -1,4 +1,4 @@
-package com.training.streams;
+ package com.training.streams;
 import java.util.*;
 import static java.util.stream.Collectors.*;
 

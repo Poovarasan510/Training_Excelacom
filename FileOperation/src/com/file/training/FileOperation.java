@@ -14,18 +14,18 @@ public class FileOperation {
 	
 	public static void main (String[] args) {
 		
-		try {
-			
-			File myFile= new File("File.txt");
-			if(myFile.createNewFile()) {
-				System.out.println("File created:"+myFile.getName());
-			}else {
-				System.out.println("File Already Exists");
-			}
-		}catch(IOException e) {
-			e.printStackTrace();
-		}
-		
+//		try {
+//			
+//			File myFile= new File("File.txt");
+//			if(myFile.createNewFile()) {
+//				System.out.println("File created:"+myFile.getName());
+//			}else {
+//				System.out.println("File Already Exists");
+//			}
+//		}catch(IOException e) {
+//			e.printStackTrace();
+//		}
+//		
 		
 //		try {
 //		FileWriter myWriter = new FileWriter("Fruit.txt");

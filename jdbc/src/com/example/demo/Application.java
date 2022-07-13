@@ -12,7 +12,7 @@ public class Application {
 		try{
 			
 			con=
-			DriverManager.getConnection("Jdbc:Oracle:thin:@10.90.1.105:1521/DEV","HR","HR");
+			DriverManager.getConnection("Jdbc:Oracle:thin:@10.90.1.107:1521/SIT","HR","HR");
 			Product service=new Product(con);
 		 
 			

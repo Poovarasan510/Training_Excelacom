@@ -4,7 +4,8 @@ import java.sql.*;
 import java.util.*;
 
 
-public class Product {
+public class Product 
+{
 
 
 	private Connection con;

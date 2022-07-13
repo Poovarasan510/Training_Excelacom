@@ -26,6 +26,4 @@ String firstName;
 @Column(name="speaker_qualification")
 String qualification;
 
-
-
 }

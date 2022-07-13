@@ -18,7 +18,7 @@ public class HandleDuplicates {
 		
 		List<Integer> list =
 				ageList.stream()
-				.filter(e-> !filtered.add(e))
+				.filter(e-> filtered.add(e))
 				.collect(toList());
 		
 		System.out.println(list);
