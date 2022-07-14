@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.demo.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,38 +9,40 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.demo.CabDriver;
-import com.example.demo.services.CabDriverServices;
+
+import com.example.demo.TripDetail;
+import com.example.demo.service.TripDetailService;
 
 @RestController
-@RequestMapping(path="/api/v1/drivers")
-public class CabDriverController {
+@RequestMapping(path="/api/v1/trips")
+public class TripDetailController {
 
-	
 	@Autowired
-	private CabDriverServices service;
+	private TripDetailService service;
 	
 	@PostMapping
-	public CabDriver add(@RequestBody CabDriver entity)
+	public TripDetail add(@RequestBody TripDetail entity)
 	{
 		return this.service.save(entity);
 	}
 	
 	@GetMapping
-	public List<CabDriver> findAll()
+	public List<TripDetail> findAll()
 	{
 		return this.service.findAll();
 	}
 	
-	@GetMapping(path="/{id}")
-	public CabDriver findById(@PathVariable("id") int id)
+	@GetMapping(path="/srch/{id}")
+	public List<TripDetail> findById(@PathVariable("id") int id)
 	{
-		return this.service.findById(id).orElseThrow(()->new RuntimeException("Element not found"));
+		return this.service.findByDriverId(id);
 	}
-
+	
 	@DeleteMapping(path="/delete/{id}")
 	public void removeById(@PathVariable("id") int id)
 	{
 	           this.service.remove(id);	
 	}
+	
+	
 }

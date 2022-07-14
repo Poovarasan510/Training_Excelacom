@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cab-driver-service
+    name: trip-detail-service
       
   datasource:
     url: jdbc:oracle:thin:@10.90.1.107:1521/SIT
@@ -18,8 +18,4 @@ eureka:
     register-with-eureka: true
     service-url: 
       defaultZone: http://localhost:8761/eureka 
-      
-server:
-   port: 7070
     
-      
