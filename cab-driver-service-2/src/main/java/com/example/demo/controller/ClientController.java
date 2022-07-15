@@ -32,8 +32,6 @@ public ClientController(RestTemplate template) {
 	private TripDTO dto;
 	
 	
-	
-	
 
 	@GetMapping(path="/drivers")
 	public String getDrivers()
