@@ -176,5 +176,4 @@ public class Product
 		return rowAdded;
 	}
 
-	
 }

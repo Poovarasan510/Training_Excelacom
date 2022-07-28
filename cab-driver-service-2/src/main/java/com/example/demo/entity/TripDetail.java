@@ -29,7 +29,6 @@ public class TripDetail {
 	@DateTimeFormat(iso=ISO.DATE)
 	LocalDate tripDate;
 	
-
 	long amount;
 
 }

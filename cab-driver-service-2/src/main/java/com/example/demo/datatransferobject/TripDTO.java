@@ -27,3 +27,4 @@ public class TripDTO {
 	private List<TripDetail> trips;
 
 }
+

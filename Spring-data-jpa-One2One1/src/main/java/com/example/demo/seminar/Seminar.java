@@ -1,3 +1,4 @@
+
 package com.example.demo.seminar;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
