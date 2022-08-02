@@ -3,6 +3,7 @@ package org.example.mock;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.example.ifaces.StudentRepository;
 import org.example.model.Student;
@@ -30,6 +31,18 @@ public class StudentServiceMock implements StudentRepository {
 	{
 		assertEquals(addCount,count);
 		assertEquals(lastAdded, entity);
+	}
+
+	@Override
+	public Optional<Student> findById(int i) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<Student> deleteById(int id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -2,7 +2,7 @@ package org.example.model;
 
 public class Student {
 
-	private int rollNumber;
+	private static int rollNumber;
 	private String studentName;
 	public Student() {
 		super();
@@ -13,7 +13,7 @@ public class Student {
 		this.rollNumber = rollNumber;
 		this.studentName = studentName;
 	}
-	public int getRollNumber() {
+	public static int getRollNumber() {
 		return rollNumber;
 	}
 	public void setRollNumber(int rollNumber) {
