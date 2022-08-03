@@ -41,7 +41,7 @@ public class StudentServiceTest {
 	void testFindAll()
 	{
 		StudentRepository repo=mock(StudentRepository.class);
-		
+	
 		StudentService service=new StudentService(repo);
 		
 		//Stubbing
@@ -97,7 +97,7 @@ public class StudentServiceTest {
 	@DisplayName("Test verifyAddWithCondition method")
 	void testVerifyAddWithCondition()
 	{
-		Student stud=new Student(2020,"ram");
+		Student stud=new Student(20,"ram");
 		
 		serviceMock.addElement(stud);
 		

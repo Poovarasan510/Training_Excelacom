@@ -23,7 +23,7 @@ public class StudentServiceTestWithMock {
 		
 		service.add(pandi);
 		
-	    mock.verify(pandi,2);
+	    mock.verify(kavi,2);
 	}
 
 }
