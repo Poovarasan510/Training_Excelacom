@@ -20,6 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -95,6 +96,20 @@ public class CabDriverTest {
 		throw new RuntimeException(e);
 		}
 		}
+	
+	@Test
+	void testFindById() throws Exception {
+   	 
+		CabDriver poovarasan=new CabDriver(1000, "Poovarasan", 78654, "Chennai",LocalDate.of(1998, 06, 15),  3.8);
+		
+		given(service.findById(1000)).willReturn(Optional.of(poovarasan));
+		
+		mock.perform(MockMvcRequestBuilders
+				.get("/api/v1/drivers/1000")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(jsonPath("$.driverName", is("Poovarasan")));
+
+}
 }
 
 	
