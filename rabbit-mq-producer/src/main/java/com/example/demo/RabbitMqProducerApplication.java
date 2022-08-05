@@ -31,8 +31,8 @@ public class RabbitMqProducerApplication {
 		return new Jackson2JsonMessageConverter();
 	}
 	
-	@Bean
-	public AmqpTemplate templateWithConverter(ConnectionFactory factory)
+	@Bean(name="second")
+	public RabbitTemplate templateWithConverter(ConnectionFactory factory)
 	{
 		
 		RabbitTemplate rabbitTemplate = new RabbitTemplate(factory);
